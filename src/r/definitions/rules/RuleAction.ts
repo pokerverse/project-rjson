@@ -201,7 +201,7 @@ export const rActionProperties: Record<RuleAction, Array<ThenActionProperty | un
   wave: [],
   clap: [],
   talk: [ThenActionProperty.duration],
-  speak: [ThenActionProperty.string_value]
+  speak: [ThenActionProperty.item_id]
 };
 
 export const rActionPropertyDefaults: Record<ThenActionProperty, string | number | null> =  {

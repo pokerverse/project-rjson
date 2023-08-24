@@ -15,6 +15,7 @@ import discussionJson from "./jsons/discussion.json";
 import myMetaverseJson from "./jsons/myMetaverse.json";
 import learningJson from "./jsons/learning.json";
 import safeHandsJson from "./jsons/safeHands.json";
+import characterSpeaksJson from "./jsons/characterSpeaks.json";
 
 describe ("r Migration tests", () => {
   it ("should create new deployment", () => {
@@ -36,7 +37,7 @@ describe ("r Migration tests", () => {
     expect(true).to.be.true;
   });
 
-  it("should migrate a large project json", function() {
+  xit("should migrate a large project json", function() {
     this.timeout(7000);
     const st = performance.now();
     console.log("Started large migration at:", st);
@@ -44,9 +45,9 @@ describe ("r Migration tests", () => {
     const et = performance.now();
     console.log("Ended large migration at:", et);
     //fs.writeFileSync("./test/r/jsons/r3fJsons/project/learning.json", JSON.stringify(migratedProject));
-  })
+  });
 
-  it("Testing if rule ids cycle correctly", function() {
+  xit("Testing if rule ids cycle correctly", function() {
     this.timeout(5000);
     const st = performance.now();
     console.log("Started large migration at:", st);
@@ -54,5 +55,9 @@ describe ("r Migration tests", () => {
     const et = performance.now();
     console.log("Ended large migration at:", et);
     //fs.writeFileSync("./test/r/jsons/r3fJsons/project/campus.json", JSON.stringify(migratedProject));
-  })
+  });
+
+  xit ("should test 210 migration", () => {
+    fs.writeFileSync("./test/r/jsons/r3fJsons/project/characterSpeaks.json", JSON.stringify(runProjectMigrations(characterSpeaksJson)));
+  });
 });

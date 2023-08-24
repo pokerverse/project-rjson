@@ -2,6 +2,7 @@ import {FileType} from "../../files";
 import {ElementProperty} from "../../../recordTypes/Element";
 import {RuleAction, RuleEvent} from "../../rules";
 import {BasicElement, ElementType, IElementDefinition} from "../ElementDefinition";
+import { ItemProperty } from "../../../recordTypes/Item";
 
 export const Character: IElementDefinition = {
   element_type: ElementType.character,
@@ -41,6 +42,9 @@ export const Character: IElementDefinition = {
     [ElementProperty.billboarding]: null,
     [ElementProperty.scale]: 0.9
   },
+  itemProperties: [
+    ItemProperty.item_text,
+  ],
   events: [
     ...BasicElement.events,
     RuleEvent.on_finish_speaking,

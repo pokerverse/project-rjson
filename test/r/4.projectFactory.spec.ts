@@ -263,5 +263,5 @@ describe ("r ProjectFactory tests", () => {
     for (const rule of rulesAfterAdding) {
       expect(rule[1].props.ta_properties).to.be.undefined;
     }
-  })
+  });
 });
